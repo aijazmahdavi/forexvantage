@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forex Vantage Digital Marketing Strategy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            color: #cbd5e1;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+        }
+
+        .header p {
+            font-size: 1.125rem;
+            color: #cbd5e1;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            background: #1e293b;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid #334155;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: transparent;
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+
+        .tab-button:hover {
+            color: #ffffff;
+        }
+
+        .tab-button.active {
+            background: #2563eb;
+            color: #ffffff;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .legend {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .legend h3 {
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+            font-size: 1.125rem;
+        }
+
+        .legend-items {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .legend-dot {
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
+        }
+
+        .legend-dot.high {
+            background: #ef4444;
+        }
+
+        .legend-dot.medium {
+            background: #eab308;
+        }
+
+        .month-section {
+            margin-bottom: 2rem;
+        }
+
+        .month-header {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            padding: 1.5rem;
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+
+        .month-header h2 {
+            font-size: 1.75rem;
+            color: #ffffff;
+            margin-bottom: 0.25rem;
+        }
+
+        .month-header p {
+            color: #dbeafe;
+        }
+
+        .month-content {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 0 0 0.5rem 0.5rem;
+            padding: 1.5rem;
+        }
+
+        .week-section {
+            border-left: 4px solid #2563eb;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .week-header h3 {
+            font-size: 1.25rem;
+            color: #ffffff;
+            margin-bottom: 0.25rem;
+        }
+
+        .week-header p {
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+
+        .task-card {
+            background: #334155;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .task-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .task-title {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .task-icon {
+            background: #2563eb;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+        }
+
+        .task-name {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .priority-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .priority-badge.high {
+            background: #ef4444;
+        }
+
+        .priority-badge.medium {
+            background: #eab308;
+        }
+
+        .task-list {
+            list-style: none;
+        }
+
+        .task-list li {
+            display: flex;
+            align-items: start;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .task-bullet {
+            width: 0.375rem;
+            height: 0.375rem;
+            background: #60a5fa;
+            border-radius: 50%;
+            margin-top: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .arrow-down {
+            text-align: center;
+            padding: 1rem 0;
+            color: #475569;
+            font-size: 2rem;
+        }
+
+        .timeline-visual {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .timeline-visual h3 {
+            color: #ffffff;
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-label {
+            width: 8rem;
+            color: #94a3b8;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .timeline-bar-container {
+            flex: 1;
+            background: #334155;
+            height: 0.75rem;
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+
+        .timeline-bar {
+            height: 100%;
+            border-radius: 9999px;
+        }
+
+        .timeline-description {
+            width: 12rem;
+            color: #cbd5e1;
+            font-size: 0.875rem;
+        }
+
+        .phase-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: box-shadow 0.3s;
+        }
+
+        .phase-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .phase-header {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .phase-icon {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .phase-info p:first-child {
+            font-size: 0.875rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .phase-info h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .phase-content {
+            padding: 1.5rem;
+        }
+
+        .phase-content ul {
+            list-style: none;
+        }
+
+        .phase-content li {
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .phase-bullet {
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            margin-top: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .metrics-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
+
+        .metrics-card h3 {
+            color: #ffffff;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .metric-item {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-label {
+            color: #94a3b8;
+            font-size: 0.875rem;
+        }
+
+        /* Pricing Styles */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .package-card {
+            background: #1e293b;
+            border: 2px solid #334155;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .package-card.popular {
+            border-color: #2563eb;
+        }
+
+        .popular-badge {
+            background: #2563eb;
+            color: #ffffff;
+            text-align: center;
+            padding: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .package-content {
+            padding: 1.5rem;
+        }
+
+        .package-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .package-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #60a5fa;
+            margin-bottom: 1.5rem;
+        }
+
+        .package-price span {
+            font-size: 1rem;
+            color: #94a3b8;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .package-features li {
+            display: flex;
+            align-items: start;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+        }
+
+        .feature-check {
+            background: #2563eb;
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+            margin-top: 0.125rem;
+        }
+
+        .package-button {
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .package-button.primary {
+            background: #2563eb;
+            color: #ffffff;
+        }
+
+        .package-button.primary:hover {
+            background: #1d4ed8;
+        }
+
+        .package-button.secondary {
+            background: #334155;
+            color: #ffffff;
+        }
+
+        .package-button.secondary:hover {
+            background: #475569;
+        }
+
+        .pricing-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .breakdown-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
+
+        .breakdown-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .breakdown-line {
+            width: 0.5rem;
+            height: 2rem;
+            border-radius: 0.25rem;
+        }
+
+        .breakdown-title {
+            color: #ffffff;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .breakdown-items {
+            margin-bottom: 1rem;
+        }
+
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #334155;
+        }
+
+        .breakdown-item-name {
+            color: #cbd5e1;
+        }
+
+        .breakdown-item-price {
+            font-weight: 600;
+        }
+
+        .breakdown-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-top: 2px solid;
+            margin-top: 1rem;
+        }
+
+        .breakdown-total-label {
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .breakdown-total-value {
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .breakdown-note {
+            background: #334155;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .breakdown-note p {
+            color: #cbd5e1;
+            font-size: 0.875rem;
+        }
+
+        .breakdown-note strong {
+            color: #ffffff;
+        }
+
+        .investment-summary {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            border-radius: 0.5rem;
+            padding: 2rem;
+        }
+
+        .investment-summary h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .investment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .investment-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 0.5rem;
+            padding: 1.25rem;
+        }
+
+        .investment-label {
+            color: #dbeafe;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .investment-value {
+            color: #ffffff;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .investment-note {
+            color: #bfdbfe;
+            font-size: 0.75rem;
+        }
+
+        .investment-tip {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 0.5rem;
+            padding: 1rem;
+        }
+
+        .investment-tip p {
+            color: #ffffff;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 1.75rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+
+            .tab-button {
+                min-width: 100%;
+            }
+
+            .timeline-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .timeline-label,
+            .timeline-description {
+                width: 100%;
+            }
+
+            .task-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Forex Vantage Digital Marketing Strategy</h1>
+            <p>Complete roadmap to sell courses and scale revenue</p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('roadmap')">
+                📅 Execution Roadmap
+            </button>
+            <button class="tab-button" onclick="showTab('pricing')">
+                💰 Pricing & Packages
+            </button>
+            <button class="tab-button" onclick="showTab('strategy')">
+                🎯 Marketing Strategy
+            </button>
+        </div>
+
+        <!-- Roadmap Tab -->
+        <div id="roadmap" class="tab-content active">
+            <!-- Legend -->
+            <div class="legend">
+                <h3>Priority Legend:</h3>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <div class="legend-dot high"></div>
+                        <span>High Priority - Start immediately</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot medium"></div>
+                        <span>Medium Priority - Important but can wait</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Month 1 -->
+            <div class="month-section">
+                <div class="month-header">
+                    <h2>Month 1</h2>
+                    <p>Foundation & Setup</p>
+                </div>
+                <div class="month-content">
+                    <!-- Week 1-2 -->
+                    <div class="week-section">
+                        <div class="week-header">
+                            <h3>Week 1-2</h3>
+                            <p>Launch Website + Social Media Together</p>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-header">
+                                <div class="task-title">
+                                    <div class="task-icon">🌐</div>
+                                    <span class="task-name">Website (Landing Page)</span>
+                                </div>
+                                <span class="priority-badge high">HIGH</span>
+                            </div>
+                            <ul class="task-list">
+                                <li><span class="task-bullet"></span><span>Domain & hosting setup</span></li>
+                                <li><span class="task-bullet"></span><span>Single high-converting landing page</span></li>
+                                <li><span class="task-bullet"></span><span>Course overview & pricing</span></li>
+                                <li><span class="task-bullet"></span><span>Email capture form</span></li>
+                                <li><span class="task-bullet"></span><span>Payment gateway integration</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-header">
+                                <div class="task-title">
+                                    <div class="task-icon">📱</div>
+                                    <span class="task-name">Instagram</span>
+                                </div>
+                                <span class="priority-badge high">HIGH</span>
+                            </div>
+                            <ul class="task-list">
+                                <li><span class="task-bullet"></span><span>Create business account + optimize bio</span></li>
+                                <li><span class="task-bullet"></span><span>Design branded templates (Canva)</span></li>
+                                <li><span class="task-bullet"></span><span>Post daily: trading tips, market analysis, motivational quotes</span></li>
+                                <li><span class="task-bullet"></span><span>Use Reels for quick forex tutorials (15-30 sec)</span></li>
+                                <li><span class="task-bullet"></span><span>Hashtags: #forextrading #forexlifestyle #daytrading</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-header">
+                                <div class="task-title">
+                                    <div class="task-icon">🐦</div>
+                                    <span class="task-name">Twitter (X)</span>
+                                </div>
+                                <span class="priority-badge high">HIGH</span>
+                            </div>
+                            <ul class="task-list">
+                                <li><span class="task-bullet"></span><span>Create professional profile</span></li>
+                                <li><span class="task-bullet"></span><span>Tweet 3-5 times daily: market updates, trading insights</span></li>
+                                <li><span class="task-bullet"></span><span>Engage with forex community & influencers</span></li>
+                                <li><span class="task-bullet"></span><span>Share website links & course teasers</span></li>
+                                <li><span class="task-bullet"></span><span>Use trending forex hashtags</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-header">
+                                <div class="task-title">
+                                    <div class="task-icon">👻</div>
+                                    <span class="task-name">Snapchat</span>
+                                </div>
+                                <span class="priority-badge medium">MEDIUM</span>
+                            </div>
+                            <ul class="task-list">
+                                <li><span class="task-bullet"></span><span>Setup Snapchat for Business account</span></li>
+                                <li><span class="task-bullet"></span><span>Daily stories: behind-the-scenes, trading wins, tips</span></li>
+                                <li><span class="task-bullet"></span><span>Quick 10-second trading facts</span></li>
+                                <li><span class="task-bullet"></span><span>Younger audience focus (18-25 year olds)</span></li>
+                                <li><span class="task-bullet"></span><span>Snapchat Ads setup for later campaigns</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-header">
+                                <div class="task-title">
+                                    <div class="task-icon">📊</div>
+                                    <span class="task-name">Analytics Setup</span>
+                                </div>
+                                <span class="priority-badge high">HIGH</span>
+                            </div>
+                            <ul class="task-list">
+                                <li><span class="task-bullet"></span><span>Google Analytics 4</span></li>
+                                <li><span class="task-bullet"></span><span>Meta Pixel installation (Instagram/Facebook)</span></li>
+                                <li><span class="task-bullet"></span><span>Twitter/Snapchat Pixel installation</span></li>
+                                <li><span class="task-bullet"></span><span>Conversion tracking setup</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Week 3-4 -->
+                    <div class="week-section">
+                        <div class="week-header">
+                            <h3>Week 3-4</h3>
+                            <p>Content System + Email Marketing</p>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-header">
+                                <div class="task-title">
+                                    <div class="task-icon">📱</div>
+                                    <span class="task-name">Social Media Growth</span>
+                                </div>
+                                <span class="priority-badge high">HIGH</span>
+                            </div>
+                            <ul class="task-list">
+                                <li><span class="task-bullet"></span><span>Instagram: Go live weekly for Q&A sessions</span></li>
+                                <li><span class="task-bullet"></span><span>Twitter: Start Twitter Spaces (audio discussions)</span></li>
+                                <li><span class="task-bullet"></span><span>Snapchat: Create spotlight videos (viral short content)</span></li>
+                                <li><span class="task-bullet"></span><span>Cross-post content across all platforms</span></li>
+                                <li><span class="task-bullet"></span><span>Design consistent branding (logo, colors, templates)</span></li>
+                                <li><span class="task-bullet"></span><span>Prepare 30-day content calendar for all platforms</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-header">
+                                <div class="task-title">
+                                    <div class="task-icon">📧</div>
+                                    <span class="task-name">Email Marketing</span>
+                                </div>
+                                <span class="priority-badge high">HIGH</span>
+                            </div>
+                            <ul class="task-list">
+                                <li><span class="task-bullet"></span><span>Setup email service (Mailchimp/ConvertKit)</span></li>
+                                <li><span class="task-bullet"></span><span>Create welcome sequence (5 emails)</span></li>
+                                <li><span class="task-bullet"></span><span>Design lead magnet (Free Forex Guide PDF)</span></li>
+                                <li><span class="task-bullet"></span><span>Build email list landing page</span></li>
+                                <li><span class="task-bullet"></span><span>Add email signup to all social media bios</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow-down">↓</div>
+
+            <!-- Month 2 -->
+            <div class="month-section">
+                <div class="month-header">
+                    <h2>Month 2</h2>
+                    <p>Content & Traffic Generation</p>
+                </div>
+                <div class="month-content">
+                    <!-- Week 5-6 -->
+                    <div class="week-section">
+                        <div class="week-header">
+                            <h3>Week 5-6</h3>
+                            <p>Content Creation & SEO</p>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-header">
+                                <div class="task-title">
+                                    <div class="task-icon">🌐</div>
+                                    <span class="task-name">Website Expansion</span>
+                                </div>
+                                <span class="priority-badge high">HIGH</span>
+                            </div>
+                            <ul class="task-list">
+                                <li><span class="task-bullet"></span><span>Add blog section</span></li>
+                                <li><span class="task-bullet"></span><span>Publish 8-10 SEO-optimized articles</span></li>
+                                <li><span class="task-bullet"></span><span>Create 'About' and 'Testimonials' pages</span></li>
+                                <li><span class="task-bullet"></span><span>Add FAQ section</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-header">
+                                <div class="task-title">
+                                    <div class="task-icon">📹</div>
+                                    <span class="task-name">YouTube Channel</span>
+                                </div>
+                                <span class="priority-badge medium">MEDIUM</span>
+                            </div>
+                            <ul class="task-list">
+                                <li><span class="task-bullet"></span><span>Launch YouTube channel</span></li>
+                                <li><span class="task-bullet"></span><span>Upload 4-6 educational videos</span></li>
+                                <li><span class="task-bullet"></span><span>Forex basics, trading tips, course previews</span></li>
+                                <li><span class="task-bullet"></span><span>Optimize for search (keywords in titles/descriptions)</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Week 7-8 -->
+                    <div class="week-section">
+                        <div class="week-header">
+                            <h3>Week 7-8</h3>
+                            <p>Organic Growth</p>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-header">
+                                <div class="task-title">
+                                    <div class="task-icon">📱</div>
+                                    <span class="task-name">Social Media Expansion</span>
+                                </div>
+                                <span class="priority-badge high">HIGH</span>
+                            </div>
+                            <ul class="task-list">
+                                <li><span class="task-bullet"></span><span>Instagram: Launch IGTV for longer course previews</span></li>
+                                <li><span class="task-bullet"></span><span>Twitter: Pin best-performing tweets, create threads</span></li>
+                                <li><span class="task-bullet"></span><span>Snapchat: Partner with micro-influencers in forex niche</span></li>
+                                <li><span class="task-bullet"></span><span>Post frequency: Instagram 2x/day, Twitter 5x/day, Snapchat stories 3-5x/day</span></li>
+                                <li><span class="task-bullet"></span><span>Run engagement campaigns (giveaways, challenges)</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-header">
+                                <div class="task-title">
+                                    <div class="task-icon">🔍</div>
+                                    <span class="task-name">SEO Optimization</span>
+                                </div>
+                                <span class="priority-badge medium">MEDIUM</span>
+                            </div>
+                            <ul class="task-list">
+                                <li><span class="task-bullet"></span><span>Keyword research for courses</span></li>
+                                <li><span class="task-bullet"></span><span>Optimize all pages for search</span></li>
+                                <li><span class="task-bullet"></span><span>Build backlinks (guest posts, forums)</span></li>
+                                <li><span class="task-bullet"></span><span>Submit to forex directories</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow-down">↓</div>
+
+            <!-- Month 3 -->
+            <div class="month-section">
+                <div class="month-header">
+                    <h2>Month 3</h2>
+                    <p>Paid Advertising & Scaling</p>
+                </div>
+                <div class="month-content">
+                    <!-- Week 9-10 -->
+                    <div class="week-section">
+                        <div class="week-header">
+                            <h3>Week 9-10</h3>
+                            <p>Launch Paid Campaigns</p>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-header">
+                                <div class="task-title">
+                                    <div class="task-icon">🎯</div>
+                                    <span class="task-name">Facebook/Instagram/Snapchat Ads</span>
+                                </div>
+                                <span class="priority-badge high">HIGH</span>
+                            </div>
+                            <ul class="task-list">
+                                <li><span class="task-bullet"></span><span>Instagram: Carousel ads showcasing course benefits</span></li>
+                                <li><span class="task-bullet"></span><span>Snapchat: Full-screen vertical video ads (5-10 sec)</span></li>
+                                <li><span class="task-bullet"></span><span>Facebook: Retargeting ads for website visitors</span></li>
+                                <li><span class="task-bullet"></span><span>A/B test ad creatives and copy across platforms</span></li>
+                                <li><span class="task-bullet"></span><span>Target: Forex traders, entrepreneurs, side-hustlers</span></li>
+                                <li><span class="task-bullet"></span><span>Budget: $10-15/day per platform initially</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-header">
+                                <div class="task-title">
+                                    <div class="task-icon">🔍</div>
+                                    <span class="task-name">Google Ads</span>
+                                </div>
+                                <span class="priority-badge medium">MEDIUM</span>
+                            </div>
+                            <ul class="task-list">
+                                <li><span class="task-bullet"></span><span>Search ads for 'forex courses', 'learn forex'</span></li>
+                                <li><span class="task-bullet"></span><span>Retargeting campaigns for website visitors</span></li>
+                                <li><span class="task-bullet"></span><span>Budget: Start with $15-25/day</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Week 11-12 -->
+                    <div class="week-section">
+                        <div class="week-header">
+                            <h3>Week 11-12</h3>
+                            <p>Conversion Optimization</p>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-header">
+                                <div class="task-title">
+                                    <div class="task-icon">📧</div>
+                                    <span class="task-name">Email Campaigns</span>
+                                </div>
+                                <span class="priority-badge high">HIGH</span>
+                            </div>
+                            <ul class="task-list">
+                                <li><span class="task-bullet"></span><span>Launch promotional email sequences</span></li>
+                                <li><span class="task-bullet"></span><span>Host free webinar (120+ registrations target)</span></li>
+                                <li><span class="task-bullet"></span><span>Send limited-time discount offers</span></li>
+                                <li><span class="task-bullet"></span><span>Segment audience (beginner/advanced)</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-header">
+                                <div class="task-title">
+                                    <div class="task-icon">🌐</div>
+                                    <span class="task-name">Website Optimization</span>
+                                </div>
+                                <span class="priority-badge high">HIGH</span>
+                            </div>
+                            <ul class="task-list">
+                                <li><span class="task-bullet"></span><span>A/B test landing pages</span></li>
+                                <li><span class="task-bullet"></span><span>Add live chat/chatbot</span></li>
+                                <li><span class="task-bullet"></span><span>Improve page load speed</span></li>
+                                <li><span class="task-bullet"></span><span>Add more testimonials and social proof</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow-down">↓</div>
+
+            <!-- Month 4+ -->
+            <div class="month-section">
+                <div class="month-header">
+                    <h2>Month 4+</h2>
+                    <p>Scale & Optimize</p>
+                </div>
+                <div class="month-content">
+                    <div class="week-section">
+                        <div class="week-header">
+                            <h3>Ongoing</h3>
+                            <p>Growth & Retention</p>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-header">
+                                <div class="task-title">
+                                    <div class="task-icon">📈</div>
+                                    <span class="task-name">All Channels</span>
+                                </div>
+                                <span class="priority-badge high">HIGH</span>
+                            </div>
+                            <ul class="task-list">
+                                <li><span class="task-bullet"></span><span>Scale ad budgets based on ROI</span></li>
+                                <li><span class="task-bullet"></span><span>Launch affiliate program</span></li>
+                                <li><span class="task-bullet"></span><span>Create advanced courses (upsells)</span></li>
+                                <li><span class="task-bullet"></span><span>Build student community (Discord/Facebook Group)</span></li>
+                                <li><span class="task-bullet"></span><span>Monthly webinars and live trading sessions</span></li>
+                                <li><span class="task-bullet"></span><span>Collect reviews and case studies</span></li>
+                                <li><span class="task-bullet"></span><span>Expand to TikTok, Pinterest if suitable</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Visual -->
+            <div class="timeline-visual">
+                <h3>Platform Growth Timeline</h3>
+                <div class="timeline-row">
+                    <div class="timeline-label">Week 1-2</div>
+                    <div class="timeline-bar-container">
+                        <div class="timeline-bar" style="width: 100%; background: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);"></div>
+                    </div>
+                    <div class="timeline-description">Website + All Social Media</div>
+                </div>
+                <div class="timeline-row">
+                    <div class="timeline-label">Week 3-4</div>
+                    <div class="timeline-bar-container">
+                        <div class="timeline-bar" style="width: 100%; background: #7c3aed;"></div>
+                    </div>
+                    <div class="timeline-description">Email + Content System</div>
+                </div>
+                <div class="timeline-row">
+                    <div class="timeline-label">Week 5-8</div>
+                    <div class="timeline-bar-container">
+                        <div class="timeline-bar" style="width: 100%; background: #10b981;"></div>
+                    </div>
+                    <div class="timeline-description">Content + SEO + YouTube</div>
+                </div>
+                <div class="timeline-row">
+                    <div class="timeline-label">Week 9+</div>
+                    <div class="timeline-bar-container">
+                        <div class="timeline-bar" style="width: 100%; background: #ef4444;"></div>
+                    </div>
+                    <div class="timeline-description">Paid Ads + Scale</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing Tab -->
+        <div id="pricing" class="tab-content">
+            <h2 style="font-size: 2rem; color: #ffffff; margin-bottom: 1.5rem;">Service Packages</h2>
+            
+            <div class="packages-grid">
+                <!-- Starter Package -->
+                <div class="package-card">
+                    <div class="package-content">
+                        <div class="package-name">Starter Package</div>
+                        <div class="package-price">PKR 75,000<span>/month</span></div>
+                        <ul class="package-features">
+                            <li>
+                                <div class="feature-check">✓</div>
+                                <span>Website + Hosting + Domain</span>
+                            </li>
+                            <li>
+                                <div class="feature-check">✓</div>
+                                <span>Instagram + Twitter + Snapchat Management</span>
+                            </li>
+                            <li>
+                                <div class="feature-check">✓</div>
+                                <span>Basic Content Creation (20 posts/month)</span>
+                            </li>
+                            <li>
+                                <div class="feature-check">✓</div>
+                                <span>Email Marketing Setup + Campaigns</span>
+                            </li>
+                            <li>
+                                <div class="feature-check">✓</div>
+                                <span>Monthly Analytics Report</span>
+                            </li>
+                        </ul>
+                        <button class="package-button secondary">Choose Package</button>
+                    </div>
+                </div>
+
+                <!-- Growth Package -->
+                <div class="package-card popular">
+                    <div class="popular-badge">⭐ MOST POPULAR</div>
+                    <div class="package-content">
+                        <div class="package-name">Growth Package</div>
+                        <div class="package-price">PKR 120,000<span>/month</span></div>
+                        <ul class="package-features">
+                            <li>
+                                <div class="feature-check">✓</div>
+                                <span>Everything in Starter Package</span>
+                            </li>
+                            <li>
+                                <div class="feature-check">✓</div>
+                                <span>SEO + Blog Writing (8 articles/month)</span>
+                            </li>
+                            <li>
+                                <div class="feature-check">✓</div>
+                                <span>Enhanced Content (30+ posts, Reels, Stories)</span>
+                            </li>
+                            <li>
+                                <div class="feature-check">✓</div>
+                                <span>YouTube Channel Management</span>
+                            </li>
+                            <li>
+                                <div class="feature-check">✓</div>
+                                <span>Lead Magnet Creation</span>
+                            </li>
+                            <li>
+                                <div class="feature-check">✓</div>
+                                <span>Priority Support</span>
+                            </li>
+                        </ul>
+                        <button class="package-button primary">Choose Package</button>
+                    </div>
+                </div>
+
+                <!-- Premium Package -->
+                <div class="package-card">
+                    <div class="package-content">
+                        <div class="package-name">Premium Package</div>
+                        <div class="package-price">PKR 180,000<span>/month</span></div>
+                        <ul class="package-features">
+                            <li>
+                                <div class="feature-check">✓</div>
+                                <span>Everything in Growth Package</span>
+                            </li>
+                            <li>
+                                <div class="feature-check">✓</div>
+                                <span>Paid Ads Management (Instagram, Google, Snapchat)</span>
+                            </li>
+                            <li>
+                                <div class="feature-check">✓</div>
+                                <span>Ad Budget: PKR 80,000 included</span>
+                            </li>
+                            <li>
+                                <div class="feature-check">✓</div>
+                                <span>Video Production (4-6 videos/month)</span>
+                            </li>
+                            <li>
+                                <div class="feature-check">✓</div>
+                                <span>Weekly Strategy Calls</span>
+                            </li>
+                            <li>
+                                <div class="feature-check">✓</div>
+                                <span>Dedicated Account Manager</span>
+                            </li>
+                            <li>
+                                <div class="feature-check">✓</div>
+                                <span>24/7 Support</span>
+                            </li>
+                        </ul>
+                        <button class="package-button secondary">Choose Package</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Breakdown -->
+            <div class="pricing-breakdown">
+                <!-- Setup Costs -->
+                <div class="breakdown-card">
+                    <div class="breakdown-header">
+                        <div class="breakdown-line" style="background: #2563eb;"></div>
+                        <h3 class="breakdown-title">One-Time Setup Costs</h3>
+                    </div>
+                    <div class="breakdown-items">
+                        <div class="breakdown-item">
+                            <span class="breakdown-item-name">Domain Registration (.com)</span>
+                            <span class="breakdown-item-price" style="color: #60a5fa;">PKR 3,500<span style="font-size: 0.75rem; color: #94a3b8;">/year</span></span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-item-name">Web Hosting (Premium)</span>
+                            <span class="breakdown-item-price" style="color: #60a5fa;">PKR 8,000<span style="font-size: 0.75rem; color: #94a3b8;">/year</span></span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-item-name">SSL Certificate</span>
+                            <span class="breakdown-item-price" style="color: #60a5fa;">Free<span style="font-size: 0.75rem; color: #94a3b8;"> (with hosting)</span></span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-item-name">Professional Logo Design</span>
+                            <span class="breakdown-item-price" style="color: #60a5fa;">PKR 15,000<span style="font-size: 0.75rem; color: #94a3b8;"> one-time</span></span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-item-name">Landing Page Design & Development</span>
+                            <span class="breakdown-item-price" style="color: #60a5fa;">PKR 35,000<span style="font-size: 0.75rem; color: #94a3b8;"> one-time</span></span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-item-name">Email Marketing Setup</span>
+                            <span class="breakdown-item-price" style="color: #60a5fa;">PKR 5,000<span style="font-size: 0.75rem; color: #94a3b8;">/month</span></span>
+                        </div>
+                    </div>
+                    <div class="breakdown-total" style="border-color: #2563eb;">
+                        <span class="breakdown-total-label">Total Setup</span>
+                        <span class="breakdown-total-value" style="color: #60a5fa;">PKR 66,500</span>
+                    </div>
+                </div>
+
+                <!-- Monthly Services -->
+                <div class="breakdown-card">
+                    <div class="breakdown-header">
+                        <div class="breakdown-line" style="background: #10b981;"></div>
+                        <h3 class="breakdown-title">Monthly Services</h3>
+                    </div>
+                    <div class="breakdown-items">
+                        <div class="breakdown-item">
+                            <span class="breakdown-item-name">Social Media Management</span>
+                            <span class="breakdown-item-price" style="color: #34d399;">PKR 25,000<span style="font-size: 0.75rem; color: #94a3b8;">/month</span></span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-item-name">Content Creation</span>
+                            <span class="breakdown-item-price" style="color: #34d399;">PKR 20,000<span style="font-size: 0.75rem; color: #94a3b8;">/month</span></span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-item-name">SEO & Blog Writing</span>
+                            <span class="breakdown-item-price" style="color: #34d399;">PKR 18,000<span style="font-size: 0.75rem; color: #94a3b8;">/month</span></span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-item-name">Email Marketing Campaigns</span>
+                            <span class="breakdown-item-price" style="color: #34d399;">PKR 8,000<span style="font-size: 0.75rem; color: #94a3b8;">/month</span></span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-item-name">Analytics & Reporting</span>
+                            <span class="breakdown-item-price" style="color: #34d399;">PKR 7,000<span style="font-size: 0.75rem; color: #94a3b8;">/month</span></span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-item-name">Website Maintenance</span>
+                            <span class="breakdown-item-price" style="color: #34d399;">PKR 10,000<span style="font-size: 0.75rem; color: #94a3b8;">/month</span></span>
+                        </div>
+                    </div>
+                    <div class="breakdown-total" style="border-color: #10b981;">
+                        <span class="breakdown-total-label">Total Monthly</span>
+                        <span class="breakdown-total-value" style="color: #34d399;">PKR 88,000</span>
+                    </div>
+                </div>
+
+                <!-- Advertising Budget -->
+                <div class="breakdown-card">
+                    <div class="breakdown-header">
+                        <div class="breakdown-line" style="background: #7c3aed;"></div>
+                        <h3 class="breakdown-title">Paid Advertising (Month 3+)</h3>
+                    </div>
+                    <div class="breakdown-items">
+                        <div class="breakdown-item">
+                            <span class="breakdown-item-name">Instagram/Facebook Ads Budget</span>
+                            <span class="breakdown-item-price" style="color: #a78bfa;">PKR 30,000-50,000<span style="font-size: 0.75rem; color: #94a3b8;">/month</span></span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-item-name">Google Ads Budget</span>
+                            <span class="breakdown-item-price" style="color: #a78bfa;">PKR 30,000-45,000<span style="font-size: 0.75rem; color: #94a3b8;">/month</span></span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-item-name">Snapchat Ads Budget</span>
+                            <span class="breakdown-item-price" style="color: #a78bfa;">PKR 20,000-35,000<span style="font-size: 0.75rem; color: #94a3b8;">/month</span></span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-item-name">Ad Campaign Management Fee</span>
+                            <span class="breakdown-item-price" style="color: #a78bfa;">PKR 15,000<span style="font-size: 0.75rem; color: #94a3b8;">/month</span></span>
+                        </div>
+                    </div>
+                    <div class="breakdown-note">
+                        <p><strong>Note:</strong> Ad budgets are flexible and can be adjusted based on performance and ROI. Recommended minimum: PKR 80,000/month combined.</p>
+                    </div>
+                </div>
+
+                <!-- Optional Add-ons -->
+                <div class="breakdown-card">
+                    <div class="breakdown-header">
+                        <div class="breakdown-line" style="background: #f97316;"></div>
+                        <h3 class="breakdown-title">Optional Add-ons</h3>
+                    </div>
+                    <div class="breakdown-items">
+                        <div class="breakdown-item">
+                            <span class="breakdown-item-name">YouTube Channel Management</span>
+                            <span class="breakdown-item-price" style="color: #fb923c;">PKR 15,000<span style="font-size: 0.75rem; color: #94a3b8;">/month</span></span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-item-name">Video Production</span>
+                            <span class="breakdown-item-price" style="color: #fb923c;">PKR 25,000<span style="font-size: 0.75rem; color: #94a3b8;">/month</span></span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-item-name">Chatbot/Live Chat Setup</span>
+                            <span class="breakdown-item-price" style="color: #fb923c;">PKR 12,000<span style="font-size: 0.75rem; color: #94a3b8;"> one-time</span></span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-item-name">Lead Magnet Design</span>
+                            <span class="breakdown-item-price" style="color: #fb923c;">PKR 8,000<span style="font-size: 0.75rem; color: #94a3b8;"> one-time</span></span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-item-name">Webinar Hosting</span>
+                            <span class="breakdown-item-price" style="color: #fb923c;">PKR 10,000<span style="font-size: 0.75rem; color: #94a3b8;">/event</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Investment Summary -->
+            <div class="investment-summary">
+                <h3>Investment Summary</h3>
+                <div class="investment-grid">
+                    <div class="investment-item">
+                        <p class="investment-label">First Month Total</p>
+                        <p class="investment-value">PKR 154,500</p>
+                        <p class="investment-note">(Setup + Monthly Services)</p>
+                    </div>
+                    <div class="investment-item">
+                        <p class="investment-label">Month 2 Onwards</p>
+                        <p class="investment-value">PKR 88,000</p>
+                        <p class="investment-note">(Monthly Services Only)</p>
+                    </div>
+                    <div class="investment-item">
+                        <p class="investment-label">With Paid Ads (Month 3+)</p>
+                        <p class="investment-value">PKR 180,000+</p>
+                        <p class="investment-note">(Services + Ad Budget + Management)</p>
+                    </div>
+                </div>
+                <div class="investment-tip">
+                    <p><strong>💡 Pro Tip:</strong> Most clients see ROI within 60-90 days. The Growth Package (PKR 120,000/month) offers the best value for scaling course sales quickly.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strategy Tab -->
+        <div id="strategy" class="tab-content">
+            <!-- Phase 1 -->
+            <div class="phase-card">
+                <div class="phase-header" style="background: #2563eb; color: #ffffff;">
+                    <div class="phase-icon">🎯</div>
+                    <div class="phase-info">
+                        <p>Phase 1: Foundation</p>
+                        <h2>Brand & Audience Setup</h2>
+                    </div>
+                </div>
+                <div class="phase-content">
+                    <ul>
+                        <li>
+                            <div class="phase-bullet" style="background: #2563eb;"></div>
+                            <span>Define target audience (beginner/intermediate/advanced traders)</span>
+                        </li>
+                        <li>
+                            <div class="phase-bullet" style="background: #2563eb;"></div>
+                            <span>Create buyer personas & pain points</span>
+                        </li>
+                        <li>
+                            <div class="phase-bullet" style="background: #2563eb;"></div>
+                            <span>Set up tracking & analytics (Google Analytics, Meta Pixel)</span>
+                        </li>
+                        <li>
+                            <div class="phase-bullet" style="background: #2563eb;"></div>
+                            <span>Develop brand messaging & unique value proposition</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="arrow-down">↓</div>
+
+            <!-- Phase 2 -->
+            <div class="phase-card">
+                <div class="phase-header" style="background: #7c3aed; color: #ffffff;">
+                    <div class="phase-icon">🏆</div>
+                    <div class="phase-info">
+                        <p>Phase 2: Content Creation</p>
+                        <h2>Build Trust & Authority</h2>
+                    </div>
+                </div>
+                <div class="phase-content">
+                    <ul>
+                        <li>
+                            <div class="phase-bullet" style="background: #7c3aed;"></div>
+                            <span>Create educational content (blog posts, market analysis)</span>
+                        </li>
+                        <li>
+                            <div class="phase-bullet" style="background: #7c3aed;"></div>
+                            <span>Produce video content (trading tips, course previews)</span>
+                        </li>
+                        <li>
+                            <div class="phase-bullet" style="background: #7c3aed;"></div>
+                            <span>Design lead magnets (free guides, cheat sheets, webinars)</span>
+                        </li>
+                        <li>
+                            <div class="phase-bullet" style="background: #7c3aed;"></div>
+                            <span>Develop social proof (testimonials, success stories, case studies)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="arrow-down">↓</div>
+
+            <!-- Phase 3 -->
+            <div class="phase-card">
+                <div class="phase-header" style="background: #10b981; color: #ffffff;">
+                    <div class="phase-icon">👥</div>
+                    <div class="phase-info">
+                        <p>Phase 3: Traffic Generation</p>
+                        <h2>Drive Targeted Visitors</h2>
+                    </div>
+                </div>
+                <div class="phase-content">
+                    <ul>
+                        <li>
+                            <div class="phase-bullet" style="background: #10b981;"></div>
+                            <span>SEO optimization (forex keywords, course-related searches)</span>
+                        </li>
+                        <li>
+                            <div class="phase-bullet" style="background: #10b981;"></div>
+                            <span>Social media marketing (Instagram, Twitter, Snapchat, YouTube)</span>
+                        </li>
+                        <li>
+                            <div class="phase-bullet" style="background: #10b981;"></div>
+                            <span>Paid advertising (Google Ads, Facebook/Instagram Ads)</span>
+                        </li>
+                        <li>
+                            <div class="phase-bullet" style="background: #10b981;"></div>
+                            <span>Community engagement (Forex forums, Reddit, Discord)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="arrow-down">↓</div>
+
+            <!-- Phase 4 -->
+            <div class="phase-card">
+                <div class="phase-header" style="background: #f97316; color: #ffffff;">
+                    <div class="phase-icon">💬</div>
+                    <div class="phase-info">
+                        <p>Phase 4: Lead Capture</p>
+                        <h2>Convert Visitors to Leads</h2>
+                    </div>
+                </div>
+                <div class="phase-content">
+                    <ul>
+                        <li>
+                            <div class="phase-bullet" style="background: #f97316;"></div>
+                            <span>Landing pages with clear CTAs</span>
+                        </li>
+                        <li>
+                            <div class="phase-bullet" style="background: #f97316;"></div>
+                            <span>Email list building (newsletter signup, course waitlist)</span>
+                        </li>
+                        <li>
+                            <div class="phase-bullet" style="background: #f97316;"></div>
+                            <span>Chatbot implementation for instant engagement</span>
+                        </li>
+                        <li>
+                            <div class="phase-bullet" style="background: #f97316;"></div>
+                            <span>Retargeting campaigns for website visitors</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="arrow-down">↓</div>
+
+            <!-- Phase 5 -->
+            <div class="phase-card">
+                <div class="phase-header" style="background: #ef4444; color: #ffffff;">
+                    <div class="phase-icon">📈</div>
+                    <div class="phase-info">
+                        <p>Phase 5: Nurture & Convert</p>
+                        <h2>Guide Leads to Purchase</h2>
+                    </div>
+                </div>
+                <div class="phase-content">
+                    <ul>
+                        <li>
+                            <div class="phase-bullet" style="background: #ef4444;"></div>
+                            <span>Email drip campaigns (educational + promotional)</span>
+                        </li>
+                        <li>
+                            <div class="phase-bullet" style="background: #ef4444;"></div>
+                            <span>Free webinars & live Q&A sessions</span>
+                        </li>
+                        <li>
+                            <div class="phase-bullet" style="background: #ef4444;"></div>
+                            <span>Limited-time offers & early bird discounts</span>
+                        </li>
+                        <li>
+                            <div class="phase-bullet" style="background: #ef4444;"></div>
+                            <span>Course comparison & benefits breakdown</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="arrow-down">↓</div>
+
+            <!-- Phase 6 -->
+            <div class="phase-card">
+                <div class="phase-header" style="background: #eab308; color: #ffffff;">
+                    <div class="phase-icon">💰</div>
+                    <div class="phase-info">
+                        <p>Phase 6: Sales & Upsell</p>
+                        <h2>Maximize Revenue</h2>
+                    </div>
+                </div>
+                <div class="phase-content">
+                    <ul>
+                        <li>
+                            <div class="phase-bullet" style="background: #eab308;"></div>
+                            <span>Optimized checkout process (multiple payment options)</span>
+                        </li>
+                        <li>
+                            <div class="phase-bullet" style="background: #eab308;"></div>
+                            <span>Bundle offers (beginner + advanced courses)</span>
+                        </li>
+                        <li>
+                            <div class="phase-bullet" style="background: #eab308;"></div>
+                            <span>One-on-one coaching upsells</span>
+                        </li>
+                        <li>
+                            <div class="phase-bullet" style="background: #eab308;"></div>
+                            <span>Affiliate program for students to refer others</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="arrow-down">↓</div>
+
+            <!-- Phase 7 -->
+            <div class="phase-card">
+                <div class="phase-header" style="background: #6366f1; color: #ffffff;">
+                    <div class="phase-icon">📊</div>
+                    <div class="phase-info">
+                        <p>Phase 7: Retention & Growth</p>
+                        <h2>Build Long-term Success</h2>
+                    </div>
+                </div>
+                <div class="phase-content">
+                    <ul>
+                        <li>
+                            <div class="phase-bullet" style="background: #6366f1;"></div>
+                            <span>Post-purchase engagement (community access, regular updates)</span>
+                        </li>
+                        <li>
+                            <div class="phase-bullet" style="background: #6366f1;"></div>
+                            <span>Collect reviews & testimonials</span>
+                        </li>
+                        <li>
+                            <div class="phase-bullet" style="background: #6366f1;"></div>
+                            <span>Create referral incentives</span>
+                        </li>
+                        <li>
+                            <div class="phase-bullet" style="background: #6366f1;"></div>
+                            <span>Analyze metrics & optimize campaigns (A/B testing, ROI tracking)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Key Metrics -->
+            <div class="metrics-card">
+                <h3>Key Success Metrics</h3>
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <p class="metric-value" style="color: #60a5fa;">Traffic</p>
+                        <p class="metric-label">Website visitors</p>
+                    </div>
+                    <div class="metric-item">
+                        <p class="metric-value" style="color: #34d399;">CTR</p>
+                        <p class="metric-label">Click-through rate</p>
+                    </div>
+                    <div class="metric-item">
+                        <p class="metric-value" style="color: #fb923c;">Conversion</p>
+                        <p class="metric-label">Leads to sales</p>
+                    </div>
+                    <div class="metric-item">
+                        <p class="metric-value" style="color: #a78bfa;">ROI</p>
+                        <p class="metric-label">Return on investment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tabs
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
